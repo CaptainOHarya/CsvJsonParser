@@ -1,0 +1,37 @@
+<staff>
+    <employee>
+        <id>1</id>
+        <firstName>John</firstName>
+        <lastName>Smith</lastName>
+        <country>USA</country>
+        <age>25</age>
+    </employee>
+    <employee>
+        <id>2</id>
+        <firstName>Inav</firstName>
+        <lastName>Petrov</lastName>
+        <country>RU</country>
+        <age>23</age>
+    </employee>
+    <employee>
+        <id>3</id>
+        <firstName>Ekaterina</firstName>
+        <lastName>Denisova</lastName>
+        <country>RU</country>
+        <age>44</age>
+    </employee>
+    <employee>
+        <id>4</id>
+        <firstName>Elena</firstName>
+        <lastName>Tundra</lastName>
+        <country>BEL</country>
+        <age>33</age>
+    </employee>
+    <employee>
+        <id>5</id>
+        <firstName>Peter</firstName>
+        <lastName>Folka</lastName>
+        <country>POL</country>
+        <age>56</age>
+    </employee>
+</staff>
