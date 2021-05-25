@@ -1,65 +1,86 @@
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
-import jdk.nashorn.internal.ir.Node;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
-import java.sql.SQLOutput;
+import java.util.ArrayList;
 import java.util.List;
-
 
 public class MainXML {
     public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException {
-
-        List<Employee> list = parseXML("data.xml");
-        //String json = listToJson(list);
-       // writeString(json);
+        String fileName = "data.xml";
+        List<Employee> list = parseXML(fileName);
+        String json = listToJson(list);
+        writeString(json);
     }
 
-    private static List<Employee> parseXML(String fileName) throws ParserConfigurationException, IOException, SAXException {
-        List<Employee> data = null;
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = factory.newDocumentBuilder();
-        Document doc = builder.parse(new File(fileName));
-        // Node staff = doc.getDocumentElement();
+    private static List<Employee> parseXML(String fileName) throws IOException, SAXException, ParserConfigurationException, NullPointerException {
 
+        // Получим объект Document для нашего XML-файла
+        Document doc;
+        doc = buildDocument(fileName);
+
+        // Получим корневой узел документа
         Node staff = doc.getDocumentElement();
         System.out.println("Корневой элемент: " + staff.getNodeName());
-        read(staff);
 
-        return data;
-        }
-    private static void read(Node node) {
-        NodeList nodeList = node.getChildNodes();
+        //Получаем узлы с именем employee
+        NodeList nodeList = doc.getElementsByTagName("employee");
+
+        // Создадим из него список объектов Employee
+        List<Employee> employeeList = new ArrayList<>();
         for (int i = 0; i < nodeList.getLength(); i++) {
-            Node node_ = (Node) nodeList.item(i);
-            if (Node.ELEMENT_NODE == node_.getNodeType());
-            System.out.println("Текущий узел: " + node_.getNodeName());
-            Element element = (Element) node_;
-            NamedNodeMap map = element.getAttributes();
-            for (int a = 0; a < map.getLength(); a++) {
-                String attrName = map.item(a).getNodeName();
-                String attrValue = map.item(a).getNodeValue();
-                System.out.println("Атрибут: " + attrName + "; значение: " + atrrValue);
-            }
-            read(node_);
-
-
+            employeeList.add(getEmployee(nodeList.item(i)));
         }
+        for (Employee employee : employeeList) {
+            System.out.println(employee.toString());
+        }
+
+        return employeeList;
     }
-    private static String listToJson(List<Employee> list){
-        Type listType = new TypeToken<List<Employee>>() {}.getType();
+
+    private static Document buildDocument(String fileName) throws IOException, SAXException, ParserConfigurationException {
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        return builder.parse(new File(fileName));
+    }
+
+    private static Employee getEmployee(Node node) {
+        Employee employee = new Employee();
+        if (Node.ELEMENT_NODE == node.getNodeType()) {
+            Element element = (Element) node;
+            employee.setId(Integer.parseInt(getTagValue("id", element)));
+            employee.setFirstName(getTagValue("firstName", element));
+            employee.setLastName(getTagValue("lastName", element));
+            employee.setCountry(getTagValue("country", element));
+            employee.setAge(Integer.parseInt(getTagValue("age", element)));
+        }
+        return employee;
+    }
+
+    // Получаем значения по указанному тегу
+    private static String getTagValue(String tag, Element element) {
+        NodeList nodeList = element.getElementsByTagName(tag).item(0).getChildNodes();
+        Node node = (Node) nodeList.item(0);
+        return node.getNodeValue();
+    }
+
+    private static String listToJson(List<Employee> list) {
+        Type listType = new TypeToken<List<Employee>>() {
+        }.getType();
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
         String json = gson.toJson(list, listType);
@@ -67,8 +88,9 @@ public class MainXML {
         return json;
 
     }
-    private static void writeString(String json){
-        try (FileWriter file = new FileWriter("data.json")){
+
+    private static void writeString(String json) {
+        try (FileWriter file = new FileWriter("data2.json")) {
             file.write(json);
             file.flush();
         } catch (IOException e) {
@@ -77,5 +99,5 @@ public class MainXML {
     }
 
 
-    }
+}
 
