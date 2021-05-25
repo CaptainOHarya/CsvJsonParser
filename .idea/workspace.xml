@@ -59,7 +59,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MainXML">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="СsvJsonParser.main" />
@@ -67,8 +67,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainXML" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainXML" />
+      <module name="СsvJsonParser.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainXML" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -91,30 +99,30 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="872" y="378" width="816" height="729" key="#Intentions/0.0.2560.1440/2560.0.2560.1440@0.0.2560.1440" timestamp="1621624655266" />
-    <state x="1050" y="421" key="#com.intellij.ide.util.MemberChooser" timestamp="1621602331517">
+    <state x="1050" y="421" key="#com.intellij.ide.util.MemberChooser" timestamp="1621964549340">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1050" y="421" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1440/2560.0.2560.1440@0.0.2560.1440" timestamp="1621602331517" />
+    <state x="1050" y="421" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1440/2560.0.2560.1440@0.0.2560.1440" timestamp="1621964549340" />
     <state x="1060" y="475" key="FileChooserDialogImpl" timestamp="1621602188137">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1060" y="475" key="FileChooserDialogImpl/0.0.2560.1440/2560.0.2560.1440@0.0.2560.1440" timestamp="1621602188137" />
-    <state width="2516" height="406" key="GridCell.Tab.0.bottom" timestamp="1621794603992">
+    <state width="2516" height="406" key="GridCell.Tab.0.bottom" timestamp="1621966952735">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2516" height="406" key="GridCell.Tab.0.bottom/0.0.2560.1440/2560.0.2560.1440@0.0.2560.1440" timestamp="1621794603992" />
-    <state width="2516" height="406" key="GridCell.Tab.0.center" timestamp="1621794603992">
+    <state width="2516" height="406" key="GridCell.Tab.0.bottom/0.0.2560.1440/2560.0.2560.1440@0.0.2560.1440" timestamp="1621966952735" />
+    <state width="2516" height="406" key="GridCell.Tab.0.center" timestamp="1621966952735">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2516" height="406" key="GridCell.Tab.0.center/0.0.2560.1440/2560.0.2560.1440@0.0.2560.1440" timestamp="1621794603992" />
-    <state width="2516" height="406" key="GridCell.Tab.0.left" timestamp="1621794603992">
+    <state width="2516" height="406" key="GridCell.Tab.0.center/0.0.2560.1440/2560.0.2560.1440@0.0.2560.1440" timestamp="1621966952735" />
+    <state width="2516" height="406" key="GridCell.Tab.0.left" timestamp="1621966952734">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2516" height="406" key="GridCell.Tab.0.left/0.0.2560.1440/2560.0.2560.1440@0.0.2560.1440" timestamp="1621794603992" />
-    <state width="2516" height="406" key="GridCell.Tab.0.right" timestamp="1621794603992">
+    <state width="2516" height="406" key="GridCell.Tab.0.left/0.0.2560.1440/2560.0.2560.1440@0.0.2560.1440" timestamp="1621966952734" />
+    <state width="2516" height="406" key="GridCell.Tab.0.right" timestamp="1621966952735">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2516" height="406" key="GridCell.Tab.0.right/0.0.2560.1440/2560.0.2560.1440@0.0.2560.1440" timestamp="1621794603992" />
+    <state width="2516" height="406" key="GridCell.Tab.0.right/0.0.2560.1440/2560.0.2560.1440@0.0.2560.1440" timestamp="1621966952735" />
     <state x="1051" y="423" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1621570486631">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
